@@ -30,9 +30,6 @@ BDEPEND="
 
 src_prepare() {
 	restore_config config.h
-
-	use X && eapply "${FILESDIR}"/enable-xwayland.patch
-
 	default
 }
 
