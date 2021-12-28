@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=dwl
-Comment=This session logs you into dwl
-Exec=dwl
-TryExec=dwl
-Type=Application
-DesktopNames=dwl
