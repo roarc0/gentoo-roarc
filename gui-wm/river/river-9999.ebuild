@@ -26,14 +26,14 @@ RDEPEND="
 	dev-libs/libevdev
 	dev-libs/libinput
 	dev-libs/wayland
-	>=gui-libs/wlroots-0.15.0[X]
+	>=gui-libs/wlroots-0.15.1[X]
 	x11-libs/cairo[X]
 	x11-libs/libxkbcommon:=[X]
 	x11-libs/pixman
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
-	>=dev-lang/zig-0.9.0
+	>=dev-lang/zig-0.9.1
 	dev-libs/wayland-protocols
 	virtual/pkgconfig
 	app-text/scdoc
