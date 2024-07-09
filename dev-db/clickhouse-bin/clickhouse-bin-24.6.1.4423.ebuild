@@ -9,9 +9,9 @@ DESCRIPTION="An OSS column-oriented database management system for real-time dat
 HOMEPAGE="https://clickhouse.com/"
 LICENSE="Apache-2.0"
 
-SRC_URI="https://packages.clickhouse.com/tgz/lts/clickhouse-common-static-${PV}-${ARCH}.tgz
-	server? ( https://packages.clickhouse.com/tgz/lts/clickhouse-server-${PV}-${ARCH}.tgz )
-	client?	( https://packages.clickhouse.com/tgz/lts/clickhouse-client-${PV}-${ARCH}.tgz )
+SRC_URI="https://packages.clickhouse.com/tgz/stable/clickhouse-common-static-${PV}-${ARCH}.tgz
+	server? ( https://packages.clickhouse.com/tgz/stable/clickhouse-server-${PV}-${ARCH}.tgz )
+	client?	( https://packages.clickhouse.com/tgz/stable/clickhouse-client-${PV}-${ARCH}.tgz )
 "
 RESTRICT="primaryuri"
 QA_PRESTRIPPED="/usr/bin/clickhouse /usr/bin/clickhouse-library-bridge /usr/bin/clickhouse-odbc-bridge"
@@ -34,8 +34,8 @@ S="${WORKDIR}/"
 
 src_install() {
 	dobin clickhouse-common-static-${PV}/usr/bin/clickhouse
-	dobin clickhouse-common-static-${PV}/usr/bin/clickhouse-odbc-bridge
-	dobin clickhouse-common-static-${PV}/usr/bin/clickhouse-library-bridge
+	#dobin clickhouse-common-static-${PV}/usr/bin/clickhouse-odbc-bridge
+	#dobin clickhouse-common-static-${PV}/usr/bin/clickhouse-library-bridge
 	dosym clickhouse /usr/bin/clickhouse-extract-from-config
 
 	if use client; then
