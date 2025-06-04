@@ -5,7 +5,7 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-src_dir="/usr/portage/$1"
+src_dir="/var/lib/repos/gentoo/$1"
 if [ ! -d "$src_dir" ]; then
     echo "Source directory '$src_dir' does not exist."
     exit 1

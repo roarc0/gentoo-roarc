@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-PYTHON_COMPAT=( python3_{10..12} )
+PYTHON_COMPAT=( python3_{10..13} )
 
 inherit gnome.org meson python-single-r1 xdg
 
@@ -11,7 +11,7 @@ HOMEPAGE="https://wiki.gnome.org/Projects/GnomeShellIntegration"
 
 LICENSE="GPL-3+"
 SLOT="0"
-KEYWORDS="amd64 ~arm arm64 ~loong ~ppc64 x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~loong ~ppc64 ~x86"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
@@ -21,6 +21,10 @@ DEPEND="${PYTHON_DEPS}
 RDEPEND="${DEPEND}
 	gnome-base/gnome-shell
 "
+
+PATCHES=(
+	"${FILESDIR}/${P}-python-path.patch"
+)
 
 src_install() {
 	meson_src_install
